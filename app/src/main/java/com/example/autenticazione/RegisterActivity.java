@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
     public void initUI(){
+        //ciao a tutti
          nome = (EditText) findViewById(R.id.et_nome);
          email = (EditText) findViewById(R.id.et_email);
          password = (EditText) findViewById(R.id.et_password);
