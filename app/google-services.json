@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "720338882296",
+    "firebase_url": "https://autenticazione-d2deb.firebaseio.com",
+    "project_id": "autenticazione-d2deb",
+    "storage_bucket": "autenticazione-d2deb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720338882296:android:c29c80b93e323d7eb1b50d",
+        "android_client_info": {
+          "package_name": "com.example.autenticazione"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720338882296-l6rgd5ivtup3noebc4amureorf160ap6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.autenticazione",
+            "certificate_hash": "588f1d67dfaf6130a111f92998dbbd7a3ac19c22"
+          }
+        },
+        {
+          "client_id": "720338882296-evup0d6a0oq85ggk4d58ut21t0gun3vf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIygoIrBgbUw2t9bF67PbL1veplWqmhfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720338882296-evup0d6a0oq85ggk4d58ut21t0gun3vf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
