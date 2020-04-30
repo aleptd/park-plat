@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -76,10 +77,10 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Occhio alle password", Toast.LENGTH_SHORT).show();
         else
         // posso invocare il metodo createFirebaUser
-        createFirebaseUser(emailUtente,passwordUtente);
+
     }
 
-    private void createFirebaseUser(String email, String password) {
+    private void createFirebaseUser(String email, String password, final String nome) {
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -88,7 +89,10 @@ public class RegisterActivity extends AppCompatActivity {
                         // Sign in success, update UI with the signed-in user's information
                         Log.i(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        //updateUI(user);
+                        setNome(nome);
+
+
+                        updateUI(user);
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.i(TAG, "createUserWithEmail:failure", task.getException());
@@ -97,9 +101,26 @@ public class RegisterActivity extends AppCompatActivity {
                         //updateUI(null);
                     }
 
-                    // ...
                 }
             });
+    }
+
+    private void setNome(String nome) {
+        FirebaseUser user= mAuth.getCurrentUser();
+
+        UserProfileChangeRequest request = new UserProfileChangeRequest.Builder()
+                .setDisplayName(nome)
+                .build();
+
+        user.updateProfile(request).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful())
+                    Log.i(TAG, "completata con successo");
+                else
+                    Log.i(TAG, "errore");
+            }
+        });
     }
 
     private void updateUI(FirebaseUser user) {
