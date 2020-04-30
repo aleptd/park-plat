@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 }
-    public void registrati (View view){
+    public void registrati (View view) {
         Log.i(TAG, "Cliccato sul pulsante registrati");
         String nomeUtente = nome.getText().toString();
         String emailUtente = email.getText().toString();
@@ -73,12 +73,13 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Inserire un nome di almeno 3 caratteri", Toast.LENGTH_SHORT).show();
         else if (!emailValida(emailUtente))
             Toast.makeText(this, "Inserire una e-mail corretta", Toast.LENGTH_SHORT).show();
-        else if (!passwordValida(passwordUtente,confermaPasswordUtente))
+        else if (!passwordValida(passwordUtente, confermaPasswordUtente))
             Toast.makeText(this, "Occhio alle password", Toast.LENGTH_SHORT).show();
         else
-        // posso invocare il metodo createFirebaUser
+            createFirebaseUser(emailUtente,passwordUtente,nomeUtente);
 
     }
+
 
     private void createFirebaseUser(String email, String password, final String nome) {
         mAuth.createUserWithEmailAndPassword(email, password)
