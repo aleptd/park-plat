@@ -3,12 +3,15 @@ package com.example.autenticazione;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -34,6 +37,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+
+    private final static String MY_PREFERENCES = "MyPref";
+    private final static String TEXT_DATA_KEY = "textData";
+
 
     //Google sign-in
     SignInButton button;
@@ -105,7 +112,24 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+    }
+    //Salvataggio preferenze
+    public void savePreferencesData(View view) {
+        SharedPreferences prefs = getSharedPreferences(MY_PREFERENCES,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        EditText outputView = (EditText) findViewById(R.id.et_email);
+        CharSequence textData = outputView.getText();
+        if (textData != null) {
+            editor.putString(TEXT_DATA_KEY, textData.toString());
+            editor.commit();
+        }
+    }
+    //Leggo i dati
+    public void loadPreferences (View view) {
+        SharedPreferences prefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        String textData = prefs.getString(TEXT_DATA_KEY, "Prefs not found!");
+        TextView outputView = (EditText) findViewById(R.id.et_email);
+        outputView.setText(textData);
     }
 
     private void signIn() {
