@@ -95,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
         Log.i(TAG, confermaPasswordUtente);
 
 
-        //controllo se i campi sono corretti
+        //controllo se i campi sono corretti e se si si crea l'utente (funzioni invocate per i controlli sottostanti)
         if (!nomeValido(nomeUtente))
             Toast.makeText(this, "Inserire un nome di almeno 3 caratteri", Toast.LENGTH_SHORT).show();
         else if (!emailValida(emailUtente))
@@ -161,6 +161,8 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //controllo sui campi inseriti per registrarsi
+
     private boolean nomeValido(String nome){
         if (nome.length()>3)
             return true;
@@ -182,6 +184,8 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
     }
 
+    //funzione che permette di inserire l'immagine utente aprendo un dialog che permette di scegliere fra galleria e fotocamera
+
     private void selectImage() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
@@ -196,7 +200,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-
+    //apertura dialog
     private void start() {
         final CharSequence[] options = {"Scatta foto", "Scegli dalla galleria", "Annulla"};
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -220,7 +224,7 @@ public class RegisterActivity extends AppCompatActivity {
         alertDialog.show();
      }
 
-
+    //caricamento della foto scattata o caricata sulla schermata di registrazione
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

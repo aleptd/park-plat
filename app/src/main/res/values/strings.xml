@@ -2,5 +2,14 @@
     <string name="app_name">Autenticazione</string>
     <string name="tvCamera">Scatta una foto</string>
     <string name="tvGallery">Scegli dalla galleria</string>
+    <string name="tvLogout">Logout</string>
+    <string name="tvIntroCredito">Il tuo credito è: </string>
+    <string name="tUserSettingsActivity">Impostazioni </string>
+    <string name="tEditProfileActivity">Modifica profilo </string>
+    <string name="tReservationsActivity">Le tue prenotazioni: </string>
+    <string name="tNotifyActivity">Segnala parcheggio </string>
+    <string name="tMapActivity">Esplora </string>
+    <string name="tRegisterActivity">Registrati </string>
+    <string name="tLoginActivity">Accedi </string>
 
 </resources>
