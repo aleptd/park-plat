@@ -4,14 +4,14 @@
 
     <item android:id="@+id/item1"
         android:icon="@drawable/ic_launcher_background"
-        android:title="Item 1"
+        android:title="Modifica profilo"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/item2"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Item 2"
+        android:icon="@drawable/settings"
+        android:title="Impostazioni"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/item3"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Item 3"
+        android:icon="@drawable/logout"
+        android:title="Logout"
         app:showAsAction="ifRoom" />
 </menu>

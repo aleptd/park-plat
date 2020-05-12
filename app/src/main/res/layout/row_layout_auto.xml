@@ -27,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintVertical_bias="0.505" />
 
     <ImageView
         android:id="@+id/ivAuto"
@@ -49,5 +49,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvLicensePlate" />
+        app:layout_constraintTop_toTopOf="@+id/tvLicensePlate"
+        app:layout_constraintVertical_bias="0.82" />
 </androidx.constraintlayout.widget.ConstraintLayout>

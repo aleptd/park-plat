@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+package com.example.autenticazione;
 
 public class Request {
+
+
 }

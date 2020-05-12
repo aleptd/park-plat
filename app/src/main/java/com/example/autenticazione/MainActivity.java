@@ -77,23 +77,13 @@ public class MainActivity<ImageView> extends AppCompatActivity {
                 startActivity(intent2);
                 return true;
             case R.id.item3:
-                /*
-                istruzione per l'item1, ad esempio ?? logout. Se volessimo fare logout dal menu toglierei
-                l'etichetta e copierei quello che c'è nell metodo logout qui dentro
-                 */
+                mAuth.signOut();
+                Intent intent3 = new Intent(this, LoginActivity.class);
+                startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-
-    // funzioni di indirizzo alle altre activity
-    public void logout(View view) {
-        mAuth.signOut();
-
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
     }
 
     public void getMap(View view) {

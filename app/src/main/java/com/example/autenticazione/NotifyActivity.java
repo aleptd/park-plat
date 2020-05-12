@@ -40,6 +40,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -57,6 +58,8 @@ public class NotifyActivity extends AppCompatActivity {
     private EditText etTime;
     private ImageView ivAuto;
     private ImageButton newTimeButton;
+    private ImageButton ibNewAuto;
+    private ImageButton ibCancelNotification;
     Context mcontext = this;
     private TextView tvTime;
     private SQLiteDatabase db;
@@ -70,6 +73,8 @@ public class NotifyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notify);
+
+        initUI();
 
         //time picker//
         newTimeButton = (ImageButton) findViewById(R.id.newTimeButton);
@@ -99,6 +104,25 @@ public class NotifyActivity extends AppCompatActivity {
         adapter = new SimpleCursorAdapter(this, R.layout.row_layout_auto, cursor, FROMS, TOS, SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         list.setAdapter(adapter);
         registerForContextMenu(list);
+
+        //funzione che permette di selezionare l'auto desiderata dalla lista, ritornando subito dopo al menu principale.
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(NotifyActivity.this, MainActivity.class);
+                //intent.putExtra("dati", list.getDati()); METTERE QUI I DATI DELLA SEGNALAZIONE CHE SI VOGLIONO TROVARE SULLA MAPPA - Disponibilità
+                Toast.makeText(NotifyActivity.this, "La tua segnalazione è stata salvata", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+    }
+
+    //inizializzazione dei bottoni per tornare indietro o aggiungere auto
+
+    public void initUI() {
+        ibNewAuto = (ImageButton) findViewById(R.id.ibNewAuto);
+        ibCancelNotification = (ImageButton) findViewById(R.id.ibCancelNotification);
     }
 
     @Override
@@ -118,6 +142,8 @@ public class NotifyActivity extends AppCompatActivity {
         cursor.close();
         db.close();
     }
+
+    //creazione db
 
     private final SQLiteOpenHelper dbHelper = new SQLiteOpenHelper(this,
             "AUTO_DB", null, DB_VERSION) {
@@ -154,6 +180,7 @@ public class NotifyActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    //menu di contesto che permette di modificare o eliminare elementi della lista
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
@@ -199,7 +226,7 @@ public class NotifyActivity extends AppCompatActivity {
         }
     }
 
-    //funzione per ereditare l'intent, on Activity Result//
+    //funzione per ereditare l'intent, a seconda che sia stato aggiunto un nuovo elemento o modificato un elemento preesistente aggiorna la lista//
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -238,6 +265,13 @@ public class NotifyActivity extends AppCompatActivity {
     public void addNewAuto(View v) {
         Intent intent = new Intent(this, NewAutoActivity.class);
         startActivityForResult(intent, CREATE_ACTIVITY_RESULT);
+    }
+
+    //tornare indietro e annullare segnalazione
+
+    public void cancelNotification(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

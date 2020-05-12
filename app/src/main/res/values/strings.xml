@@ -19,5 +19,14 @@
     <string name="update_option">Modifica</string>
     <string name="tEditAuto">Inserisci dati</string>
     <string name="delete_option">Elimina</string>
+    <string name="tvNotification">Gestisci notifiche</string>
+    <string name="tvPermission">Gestisci permessi</string>
+    <string name="sAlert">Avvisami quando il tempo sta per scadere</string>
+    <string name="sNotification">Avvisami quando ricevo una richiesta</string>
+    <string name="sNotificationAccept">Avvisami quando la mia richiesta viene accettata</string>
+    <string name="tvAlert">Inserisci minuti di preavviso:</string>
+    <string name="bSave">Salva modifiche</string>
+
+
 
 </resources>
