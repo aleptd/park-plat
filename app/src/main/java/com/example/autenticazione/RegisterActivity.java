@@ -248,6 +248,8 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    //NB nel caso di emulatori di livello 10, questa funzione e la sua applicazione non sono necessarie
+
     public static Bitmap RotateBitmap(Bitmap source, float angle)
     {
         Matrix matrix = new Matrix();

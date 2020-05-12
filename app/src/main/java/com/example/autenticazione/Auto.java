@@ -1,17 +1,23 @@
+package com.example.autenticazione;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Auto implements Parcelable {
-    private int image;
-    private String licensePlate;
-    private String model;
+    //public String image;
+    public String licensePlate;
+    public String model;
+    public long id;
+    public String color;
 
     public static class AutoMetaData {
-        public static String LICENSEPLATE = "_licensePlate";
-        public static String IMAGE = "image";
+        public static String ID = "_id";
+        public static String LICENSEPLATE = "licensePlate";
+        //public static String IMAGE = "image";
         public static String MODEL = "model";
+        public static String COLOR = "color";
         public static String TABLE_NAME = "Auto";
-        public static String[] COLUMNS = new String[] { LICENSEPLATE, IMAGE, MODEL };
+        public static String[] COLUMNS = new String[] { ID, LICENSEPLATE, MODEL, COLOR };
     }
 
     public static final Parcelable.Creator<Auto> CREATOR = new Parcelable.Creator<Auto>() {
@@ -30,22 +36,12 @@ public class Auto implements Parcelable {
     public Auto() {
     }
 
-    protected Auto(Parcel in) {
-        image = in.readInt();
+    private Auto(Parcel in) {
+        id = in.readLong();
+        //image = in.readString();
         licensePlate = in.readString();
         model = in.readString();
-    }
-
-    public String getModel(){
-        return model;
-    }
-
-    public String getLicensePlate(){
-        return licensePlate;
-    }
-
-    public int getImage(){
-        return image;
+        color = in.readString();
     }
 
     @Override
@@ -55,8 +51,10 @@ public class Auto implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(image);
+        dest.writeLong(id);
+        //dest.writeString(image);
         dest.writeString(licensePlate);
         dest.writeString(model);
+        dest.writeString(color);
     }
 }

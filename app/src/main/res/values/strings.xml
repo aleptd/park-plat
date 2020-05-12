@@ -9,7 +9,15 @@
     <string name="tReservationsActivity">Le tue prenotazioni: </string>
     <string name="tNotifyActivity">Segnala parcheggio </string>
     <string name="tMapActivity">Esplora </string>
-    <string name="tRegisterActivity">Registrati </string>
     <string name="tLoginActivity">Accedi </string>
+    <string name="tRegisterActivity">Registrati </string>
+    <string name="tvAuto">Seleziona auto </string>
+    <string name="tvTime">Inserisci ora </string>
+    <string name="cancel_option">Annulla</string>
+    <string name="save_option">Salva</string>
+    <string name="create_option">Nuovo</string>
+    <string name="update_option">Modifica</string>
+    <string name="tEditAuto">Inserisci dati</string>
+    <string name="delete_option">Elimina</string>
 
 </resources>
