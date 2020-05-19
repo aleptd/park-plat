@@ -1,10 +1,12 @@
 package com.example.autenticazione;
 
-public class Feedback {
+public class Buono {
 
-    private int id_transaction;
-    private int score_entrant;
-    private int score_incumbent;
-    private String username_incumbent;
-    private String username_entrant;
+    private int id_buono;
+
+    private int id_partner;
+    private String image;
+    private float value;
+    private String description;
+
 }

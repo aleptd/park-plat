@@ -9,7 +9,7 @@
         android:id="@+id/tvModelEntrant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="44dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvLicensePlateEntrant"
@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.007"
-        app:srcCompat="@drawable/images" />
+        app:srcCompat="@drawable/user" />
 
     <ImageView
         android:id="@+id/ivAutoImageEntrant"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfileImageEntrant"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        app:srcCompat="@drawable/auto" />
 
     <TextView
         android:id="@+id/tvLicensePlateEntrant"
@@ -70,45 +70,20 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tvModelEntrant"
-        app:layout_constraintTop_toBottomOf="@+id/tvTimeSubmissionRequest"
-        app:layout_constraintVertical_bias="0.041" />
-
-    <TextView
-        android:id="@+id/tvTimeSubmissionRequest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvUsernameEntrant"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.088" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="53dp"
-        android:layout_height="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvModelEntrant"
-        app:layout_constraintEnd_toStartOf="@+id/tvTimeSubmissionRequest"
-        app:layout_constraintHorizontal_bias="0.783"
-        app:layout_constraintStart_toEndOf="@+id/tvUsernameEntrant"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222"
-        app:srcCompat="@android:drawable/presence_away" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="39dp"
+    <RatingBar
+        android:id="@+id/ratingEntrant"
+        android:layout_width="142dp"
         android:layout_height="44dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvModelEntrant"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.604"
-        app:layout_constraintStart_toEndOf="@+id/tvUsernameEntrant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintVertical_bias="0.007" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
