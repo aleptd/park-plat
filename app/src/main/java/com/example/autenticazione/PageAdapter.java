@@ -1,4 +1,4 @@
 package com.example.autenticazione;
 
-public class Transaction {
+class PageAdapter {
 }
