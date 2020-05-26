@@ -10,13 +10,17 @@
         android:id="@+id/home_bar"
         layout="@layout/home_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></include>
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"></include>
 
     <TextView
         android:id="@+id/tUserSettingsActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tUserSettingsActivity"
+        android:textColor="@color/colorBackground"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/home_bar"
         app:layout_constraintEnd_toEndOf="@+id/home_bar"
         app:layout_constraintStart_toStartOf="@+id/home_bar"
@@ -52,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tvNotification"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -64,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tvPermission"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.087"
@@ -137,8 +143,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bSave"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="605dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_bar"
+        app:layout_constraintVertical_bias="0.778" />
 
     <TextView
         android:id="@+id/tvNotificationReject"
