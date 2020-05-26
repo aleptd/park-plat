@@ -2,6 +2,7 @@ package com.example.autenticazione;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private final static String MY_PREFERENCES = "MyPref";
     private final static String TEXT_DATA_KEY = "textData";
+    private ConstraintLayout loginLayout;
 
 
     //Google sign-in
@@ -89,6 +91,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initUI();
+        //sfondo
+
+        loginLayout = (ConstraintLayout) this.findViewById(R.id.loginLayout);
+        loginLayout.setBackgroundColor(getResources().getColor(R.color.colorBackground));
     }
 
     private void initUI() {

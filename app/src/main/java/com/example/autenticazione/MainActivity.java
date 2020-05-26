@@ -2,6 +2,8 @@ package com.example.autenticazione;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,12 +23,19 @@ public class MainActivity<ImageView> extends AppCompatActivity {
     private ImageView ivNotify;
     private ImageView ivManage;
     private ImageView ivRemember;
+    private ConstraintLayout mainLayout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //sfondo
+
+        mainLayout = (ConstraintLayout) this.findViewById(R.id.mainLayout);
+        mainLayout.setBackgroundColor(getResources().getColor(R.color.colorBackground));
+
         mAuth = FirebaseAuth.getInstance();
         setTitle("Ciao, " + mAuth.getCurrentUser().getDisplayName());
         init();

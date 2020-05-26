@@ -21,9 +21,9 @@ class PageAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new FragmentMyRequests();
-            case 1:
                 return new FragmentRequestsToMe();
+            case 1:
+                return new FragmentMyRequests();
             case 2:
                 return new FragmentMyAvailabilities();
             default:

@@ -18,5 +18,45 @@ public class Reservation {
     private boolean closingType;
     private int feedback_incumbent;
     private int feedback_entrant;
+    private String licensePlate_entrant;
+    private String model_entrant;
+    private String color_entrant;
+    private float rating_entrant;
+    private float rating_incumbent;
+    private String timeMeeting;
+    //manca l'immagine utente entrant
+
+    public Reservation(String timeMeeting, String username_entrant, String licensePlate_entrant, float rating_entrant, String model_entrant, String color_entrant, String note_entrant) {
+        this.timeMeeting = timeMeeting;
+        this.username_entrant = username_entrant;
+        this.rating_entrant = rating_entrant;
+        this.model_entrant = model_entrant;
+        this.color_entrant = color_entrant;
+        this.licensePlate_entrant = licensePlate_entrant;
+        this.note_entrant = note_entrant;
+    }
+
+    public String getUsername_entrant() {
+        return username_entrant;
+    }
+    public String getTimeMeeting(){
+        return timeMeeting;
+    }
+    public String getColor_entrant() {
+        return color_entrant;
+    }
+    public String getModel_entrant(){
+        return model_entrant;
+    }
+    public String getLicensePlate_entrant(){
+        return licensePlate_entrant;
+    }
+    public float getRating_entrant() {
+        return rating_entrant;
+    }
+    public String getNote_entrant(){
+        return note_entrant;
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.example.autenticazione;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -31,12 +32,18 @@ public class ReservationsActivity extends AppCompatActivity {
     private TabItem myRequests;
     private TabItem requestsToMe;
     private TabItem myAvailabilities;
+    private ConstraintLayout reservationsLayout;
     public PageAdapter pageAdapter; //NB classe necessaria al funzionamento del tab, creata come classe.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservations);
+
+        //sfondo
+
+        reservationsLayout = (ConstraintLayout) this.findViewById(R.id.reservationsLayout);
+        reservationsLayout.setBackgroundColor(getResources().getColor(R.color.colorBackground));
         ibBack = (ImageButton)findViewById(R.id.ibBack);
 
         //tabLayout
@@ -70,6 +77,11 @@ public class ReservationsActivity extends AppCompatActivity {
     public void goBackToMainActivity(View v) {
     Intent intent = new Intent(this, MainActivity.class);
     startActivity(intent);
+    }
+
+    public void editAvailability(View v) {
+        Intent intent = new Intent(this, NotifyActivity.class);
+        startActivity(intent);
     }
 
 }

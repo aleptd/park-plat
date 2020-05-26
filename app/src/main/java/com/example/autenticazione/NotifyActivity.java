@@ -2,6 +2,7 @@ package com.example.autenticazione;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,6 +70,7 @@ public class NotifyActivity extends AppCompatActivity {
     private static final String TAG_LOG = "SQLite Auto" ;
     private static final int DB_VERSION = 3 ;
     private ListView list;
+    private ConstraintLayout notifyLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,11 @@ public class NotifyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notify);
 
         initUI();
+
+        //sfondo
+
+        notifyLayout = (ConstraintLayout) this.findViewById(R.id.notifyLayout);
+        notifyLayout.setBackgroundColor(getResources().getColor(R.color.colorBackground));
 
         //time picker//
         newTimeButton = (ImageButton) findViewById(R.id.newTimeButton);

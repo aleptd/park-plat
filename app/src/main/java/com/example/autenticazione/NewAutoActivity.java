@@ -2,6 +2,7 @@ package com.example.autenticazione;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -60,12 +61,22 @@ public class NewAutoActivity extends AppCompatActivity {
     private Bitmap rotated_bitmap;
     Uri selectedImage;
     private Toolbar toolbar;
+    private ConstraintLayout newAutoLayout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_auto);
+        setTitle("Inserisci nuova auto");
+
+
+        //sfondo
+
+        newAutoLayout = (ConstraintLayout) this.findViewById(R.id.newAutoLayout);
+        newAutoLayout.setBackgroundColor(getResources().getColor(R.color.colorBackground));
+
+        //riferimenti agli elementi grafici
         etNewAutoLicensePlate = (EditText) findViewById(R.id.etNewAutoLicensePlate);
         etNewAutoColor = (EditText) findViewById(R.id.etNewAutoColor);
         etNewAutoModel = (EditText) findViewById(R.id.etNewAutoModel);

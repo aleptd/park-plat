@@ -2,6 +2,7 @@ package com.example.autenticazione;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -44,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     private InputStream inputStreamImg;
     private Bitmap bitmap;
     private Bitmap rotated_bitmap;
+    private ConstraintLayout registerLayout;
 
     //Firebase
     private FirebaseAuth mAuth;
@@ -61,6 +63,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        //sfondo
+
+        registerLayout = (ConstraintLayout) this.findViewById(R.id.te_login);
+        registerLayout.setBackgroundColor(getResources().getColor(R.color.colorBackground));
         initUI();
 
         aggiungiImmagine.setOnClickListener(new View.OnClickListener() {
