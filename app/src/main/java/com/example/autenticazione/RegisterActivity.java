@@ -52,12 +52,10 @@ public class RegisterActivity extends AppCompatActivity {
     private InputStream inputStreamImg;
     private Bitmap bitmap;
     private Bitmap rotated_bitmap;
-<<<<<<< HEAD
     private ConstraintLayout registerLayout;
-=======
     private Bitmap bitmap1;
     //byte[] byteArrayImage;
->>>>>>> 375db1efde713a928ffcac9695b780f975241ba0
+
 
     //Firebase
     private FirebaseAuth mAuth;
