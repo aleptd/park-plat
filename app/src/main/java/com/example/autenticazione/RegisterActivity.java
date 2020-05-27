@@ -127,7 +127,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-
+/*
         //metodo 1 trasformazione immagine in stringa
        Bitmap bitmap1 = ((BitmapDrawable) aggiungiImmagine.getDrawable()).getBitmap();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -135,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
         byte[] imageInByte = baos.toByteArray();
 
         //stringa finale da utilizzare
-        String encodedImage = Base64.encodeToString(imageInByte, Base64.NO_WRAP);
+        String encodedImage = Base64.encodeToString(imageInByte, Base64.NO_WRAP); */
 
 
 
