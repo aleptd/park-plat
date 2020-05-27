@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "720338882296",
-    "firebase_url": "https://autenticazione-d2deb.firebaseio.com",
-    "project_id": "autenticazione-d2deb",
-    "storage_bucket": "autenticazione-d2deb.appspot.com"
+    "project_number": "342339744592",
+    "firebase_url": "https://park-plat.firebaseio.com",
+    "project_id": "park-plat",
+    "storage_bucket": "park-plat.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:720338882296:android:c29c80b93e323d7eb1b50d",
+        "mobilesdk_app_id": "1:342339744592:android:2a86b760363eca69293255",
         "android_client_info": {
           "package_name": "com.example.autenticazione"
         }
       },
       "oauth_client": [
         {
-          "client_id": "720338882296-l6rgd5ivtup3noebc4amureorf160ap6.apps.googleusercontent.com",
+          "client_id": "342339744592-8u9eqlct3gdrbogq37tuvacocaa8d7o0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.autenticazione",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "720338882296-evup0d6a0oq85ggk4d58ut21t0gun3vf.apps.googleusercontent.com",
+          "client_id": "342339744592-dcgoe8h8crih38md0cm9tei2amel843s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAIygoIrBgbUw2t9bF67PbL1veplWqmhfM"
+          "current_key": "AIzaSyDTbsSl1H-u51hJtc7avkK_jSzVl-wau1k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "720338882296-evup0d6a0oq85ggk4d58ut21t0gun3vf.apps.googleusercontent.com",
+              "client_id": "342339744592-dcgoe8h8crih38md0cm9tei2amel843s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
