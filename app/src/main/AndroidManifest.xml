@@ -13,6 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD91XDZvQkkOxthrTcx0C6rz7T901ns28Q"/>
+
+
+
         <activity android:name=".NewAutoActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".ReservationsActivity" />
