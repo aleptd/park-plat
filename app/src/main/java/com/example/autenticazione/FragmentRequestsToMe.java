@@ -74,8 +74,8 @@ public class FragmentRequestsToMe extends Fragment {
 
 
 
-        Reservation reservation = new Reservation ("11:10","Giuseppe", "AT060EK", 3, "Audi", "Rosso", "con ammaccatura");
-        Reservation reservation_2 = new Reservation("18:30", "Maria", "LS328GE", 2, "Cinquecento", "Rosa", "sono in ritardo");
+        Reservation reservation = new Reservation ("11:10","Giuseppe", "AT060EK", 3, "Audi", "Rosso");
+        Reservation reservation_2 = new Reservation("18:30", "Maria", "LS328GE", 2, "Cinquecento", "Rosa");
         reservations[0]= reservation;
         reservations[1]= reservation_2;
         CustomAdapter customAdapter = new CustomAdapter(getActivity(), R.layout.j, reservations);

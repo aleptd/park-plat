@@ -35,16 +35,16 @@
 
     <ImageButton
         android:id="@+id/ibCancelNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="34dp"
+        android:layout_height="29dp"
         android:onClick="cancelNotification"
         app:layout_constraintBottom_toBottomOf="@+id/home_bar"
         app:layout_constraintEnd_toEndOf="@+id/home_bar"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        app:layout_constraintVertical_bias="0.516"
+        app:srcCompat="@drawable/back" />
 
     <TextView
         android:id="@+id/tNotifyActivity"

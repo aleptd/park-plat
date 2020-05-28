@@ -9,6 +9,7 @@
 
     <include
         android:id="@+id/home_bar"
+        style="@style/MyTheme.ActionBar.TitleTextStyle"
         layout="@layout/home_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

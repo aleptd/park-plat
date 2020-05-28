@@ -81,6 +81,9 @@ public class NewAutoActivity extends AppCompatActivity {
         etNewAutoColor = (EditText) findViewById(R.id.etNewAutoColor);
         etNewAutoModel = (EditText) findViewById(R.id.etNewAutoModel);
         toolbar = (Toolbar) findViewById(R.id.home_bar);
+
+        //cambio colore titolo toolbar
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorBackground));
         setSupportActionBar(toolbar);
 
         // codice per modificare o aggiungere i campi
