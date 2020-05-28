@@ -10,6 +10,7 @@
 
     <include
         android:id="@+id/home_bar"
+        style="@style/MyTheme.ActionBar.TitleTextStyle"
         layout="@layout/home_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,20 +19,22 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></include>
+        app:layout_constraintVertical_bias="0.0"
+        app:subtitleTextColor="@color/colorBackground"
+        app:titleTextColor="@color/colorBackground"></include>
 
     <TextView
         android:id="@+id/tvCredito"
-        android:layout_width="40dp"
-        android:layout_height="33dp"
+        android:layout_width="36dp"
+        android:layout_height="41dp"
         android:text="75"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintVertical_bias="0.13" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -43,10 +46,10 @@
         android:progressTint="#1E4382"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintVertical_bias="0.13" />
 
     <ImageView
         android:id="@+id/ivFind"
@@ -56,10 +59,10 @@
         android:onClick="getMap"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21"
+        app:layout_constraintVertical_bias="0.282"
         app:srcCompat="@drawable/map" />
 
     <ImageView
@@ -73,7 +76,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476"
+        app:layout_constraintVertical_bias="0.515"
         app:srcCompat="@drawable/notify" />
 
     <ImageView
@@ -84,7 +87,7 @@
         android:onClick="getMap"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -98,10 +101,10 @@
         android:onClick="getReservationsActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739"
+        app:layout_constraintVertical_bias="0.757"
         app:srcCompat="@drawable/manage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

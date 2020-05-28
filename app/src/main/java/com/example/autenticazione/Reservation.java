@@ -26,14 +26,13 @@ public class Reservation {
     private String timeMeeting;
     //manca l'immagine utente entrant
 
-    public Reservation(String timeMeeting, String username_entrant, String licensePlate_entrant, float rating_entrant, String model_entrant, String color_entrant, String note_entrant) {
+    public Reservation(String timeMeeting, String username_entrant, String licensePlate_entrant, float rating_entrant, String model_entrant, String color_entrant) {
         this.timeMeeting = timeMeeting;
         this.username_entrant = username_entrant;
         this.rating_entrant = rating_entrant;
         this.model_entrant = model_entrant;
         this.color_entrant = color_entrant;
         this.licensePlate_entrant = licensePlate_entrant;
-        this.note_entrant = note_entrant;
     }
 
     public String getUsername_entrant() {

@@ -51,6 +51,9 @@ public class MainActivity<ImageView> extends AppCompatActivity {
 
         // Aggiungo la toolbar
         toolbar = (Toolbar) findViewById(R.id.home_bar);
+
+        //settaggio colore testo toolbar
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorBackground));
         setSupportActionBar(toolbar);
     }
 

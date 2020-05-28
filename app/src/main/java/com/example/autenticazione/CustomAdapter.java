@@ -43,7 +43,6 @@ public class CustomAdapter extends ArrayAdapter<Reservation> {
             TextView t2 = (TextView) v.findViewById(R.id.tvLicensePlateEntrant);
             TextView t3 = (TextView) v.findViewById(R.id.tvModelEntrant);
             TextView t4 = (TextView) v.findViewById(R.id.tvColorEntrant);
-            TextView t5 = (TextView) v.findViewById(R.id.tvNoteEntrant);
             RatingBar ratingBar = (RatingBar) v.findViewById(R.id.ratingEntrant);
             ratingBar.setNumStars(3);
             if(t0 != null) {
@@ -60,9 +59,6 @@ public class CustomAdapter extends ArrayAdapter<Reservation> {
             }
             if(t4 != null){
                 t4.setText(p.getColor_entrant());
-            }
-            if(t5 != null) {
-                t5.setText(p.getNote_entrant());
             }
             if(ratingBar != null) {
                 ratingBar.setRating(p.getRating_entrant());

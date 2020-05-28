@@ -8,8 +8,9 @@
 
     <RatingBar
         android:id="@+id/ratingBar2"
-        android:layout_width="139dp"
-        android:layout_height="48dp"
+        android:layout_width="140dp"
+        android:layout_height="49dp"
+        android:progressTint="@color/colorActionBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
@@ -24,7 +25,7 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.923" />
@@ -36,10 +37,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.222" />
 
     <TextView
         android:id="@+id/tvModelIncumbent"
@@ -50,7 +51,7 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toEndOf="@+id/tvImageAutoIncumbent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsernameIncumbent"
         app:layout_constraintVertical_bias="0.0" />
@@ -62,10 +63,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsernameIncumbent"
-        app:layout_constraintVertical_bias="0.493" />
+        app:layout_constraintVertical_bias="0.519" />
 
     <ImageView
         android:id="@+id/ivStatusRejected"
@@ -86,7 +87,7 @@
         android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/tvImageAutoIncumbent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -98,23 +99,24 @@
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:drawable/ic_menu_crop" />
+        app:srcCompat="@drawable/auto" />
 
     <TextView
         android:id="@+id/tvTimeIncumbent"
-        android:layout_width="34dp"
-        android:layout_height="20dp"
+        android:layout_width="59dp"
+        android:layout_height="46dp"
         android:text="n"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="0.505" />
 
     <ImageView
         android:id="@+id/ivStatusAccepted"
@@ -126,7 +128,7 @@
         app:layout_constraintStart_toEndOf="@+id/ratingBar2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.484"
-        app:srcCompat="@android:drawable/ic_menu_call" />
+        app:srcCompat="@android:drawable/checkbox_on_background" />
 
     <ImageView
         android:id="@+id/ivEntrantDeleteRequest"

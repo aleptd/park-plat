@@ -149,6 +149,11 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
+       //modo per salvare i dati nel DB
+        /*if (nomeUtente.compareTo("")!= 0 && emailUtente.compareTo("")!=0 && passwordUtente.compareTo("")!=0 && confermaPasswordUtente.compareTo("")!=0 && encodedImage.compareTo("")!=0)
+        {
+
+        } */
 
         //per ripulire i campi una volta che l'utente ha inserito i dati e dunque si impostano a vuoti
         nome.setText("");
@@ -172,7 +177,6 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Occhio alle password", Toast.LENGTH_SHORT).show();
         else
             createFirebaseUser(emailUtente,passwordUtente,nomeUtente);
-
 
 
     }

@@ -44,6 +44,8 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -71,6 +73,8 @@ public class NotifyActivity extends AppCompatActivity {
     private static final int DB_VERSION = 3 ;
     private ListView list;
     private ConstraintLayout notifyLayout;
+    //FirebaseDatabase database;
+    //DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +123,20 @@ public class NotifyActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(NotifyActivity.this, MainActivity.class);
-                //intent.putExtra("dati", list.getDati()); METTERE QUI I DATI DELLA SEGNALAZIONE CHE SI VOGLIONO TROVARE SULLA MAPPA - Disponibilità
+                /*L'ora inserita, e i dati dell'auto selezionata vengono inviati alla tabella Availability e viene creato
+                un nuovo oggetto Availability;
+
+                 */
+                /*View view1 = (View)view.getParent();
+                TextView licensePlate = (TextView) view1.findViewById(R.id.tvLicensePlate);
+                TextView model = (TextView) view1.findViewById(R.id.tvModel);
+                TextView color = (TextView) view1.findViewById(R.id.tvColor);
+                Availability availability = new Availability(tvTime.getText().toString(),
+                        licensePlate.getText().toString(), model.getText().toString(),
+                        color.getText().toString());
+                myRef.child("Availabilities").push().setValue(availability);
+
+                 */
                 Toast.makeText(NotifyActivity.this, "La tua segnalazione è stata salvata", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -131,6 +148,10 @@ public class NotifyActivity extends AppCompatActivity {
     public void initUI() {
         ibNewAuto = (ImageButton) findViewById(R.id.ibNewAuto);
         ibCancelNotification = (ImageButton) findViewById(R.id.ibCancelNotification);
+        /*database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("Availability");
+
+         */
     }
 
     @Override
