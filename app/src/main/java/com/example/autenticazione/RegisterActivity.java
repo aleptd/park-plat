@@ -33,6 +33,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -60,8 +62,10 @@ public class RegisterActivity extends AppCompatActivity {
     //Firebase
     private FirebaseAuth mAuth;
 
+    //per DB utente
     FirebaseDatabase database;
     DatabaseReference myRef;
+
 
 
     @Override
@@ -100,12 +104,11 @@ public class RegisterActivity extends AppCompatActivity {
          confermaPassword = (EditText) findViewById(R.id.et_confermaPassword);
          aggiungiImmagine = (ImageView) findViewById(R.id.ivUploadImage);
 
+//inizializzazione database firebase
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
 
 
-
-        //inizializzazione database firebase
-       //  database = FirebaseDatabase.getInstance();
-       //  myRef = database.getReference();
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -137,16 +140,15 @@ public class RegisterActivity extends AppCompatActivity {
         //stringa finale da utilizzare
         String encodedImage = Base64.encodeToString(imageInByte, Base64.NO_WRAP); */
 
+//modo per salvare i dati nel DB
+
+        Utente utente = new Utente(emailUtente);
+        myRef.child("Utenti").push().setValue(utente);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
 
-
-       //modo per salvare i dati nel DB
-        /*if (nomeUtente.compareTo("")!= 0 && emailUtente.compareTo("")!=0 && passwordUtente.compareTo("")!=0 && confermaPasswordUtente.compareTo("")!=0 && encodedImage.compareTo("")!=0)
-        {
-            Utente utente = new Utente(nomeUtente, emailUtente, passwordUtente, confermaPasswordUtente, encodedImage);
-            myRef.child("Utenti").push().setValue(utente);
-        } */
 
         //per ripulire i campi una volta che l'utente ha inserito i dati e dunque si impostano a vuoti
         nome.setText("");
@@ -200,6 +202,13 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             });
 
+    }
+
+
+    public String getNome() {
+
+       String name = nome.getText().toString();
+        return name;
     }
 
     private void setNome(String nome) {

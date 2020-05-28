@@ -1,5 +1,14 @@
 package com.example.autenticazione;
 
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+
 import java.sql.Time;
 import java.util.Date;
 
@@ -52,6 +61,9 @@ public class Request {
     public boolean getStatus(){
         return status;
     }
+
+
+
 }
 
 

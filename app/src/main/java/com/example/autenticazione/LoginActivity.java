@@ -29,6 +29,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+
+import java.text.BreakIterator;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -39,14 +48,23 @@ public class LoginActivity extends AppCompatActivity {
     private EditText username;
     private EditText password;
 
+    BreakIterator tvMessaggio;
+
     private final static String MY_PREFERENCES = "MyPref";
     private final static String TEXT_DATA_KEY = "textData";
     private ConstraintLayout loginLayout;
+
+    //private DatabaseReference databaseReference = database
 
 
     //Google sign-in
     SignInButton button;
     GoogleSignInClient googleSignInClient;
+
+    //per DB utente
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+
 
     @Override
     public void onStart() {
@@ -100,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
     private void initUI() {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+
         username = (EditText) findViewById(R.id.et_email);
         password = (EditText) findViewById(R.id.et_password);
         button = findViewById(R.id.sign_in_button);
@@ -109,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        
+
         googleSignInClient= GoogleSignIn.getClient(this, options);
         button.setOnClickListener(new View.OnClickListener() {
             
@@ -117,6 +136,15 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+        //inizializzazione database firebase
+         FirebaseDatabase database = FirebaseDatabase.getInstance();
+         myRef = database.getReference();
+
+
+
+
+        getToken();
 
     }
     //Salvataggio preferenze
@@ -201,10 +229,13 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
+//loggandoci inviamo messaggio a DB
     public void login(View view) {
-                String emailUtente = username.getText().toString();
-                String passwordUtente = password.getText().toString();
+
+
+
+        final String emailUtente = username.getText().toString();
+        String passwordUtente = password.getText().toString();
 
 
                 mAuth.signInWithEmailAndPassword(emailUtente, passwordUtente)
@@ -216,6 +247,23 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.i(TAG, "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     updateUI(user);
+
+
+/*
+                                    //se tutto va bene si salva nel DB
+                                    myRef = database.getReference("utente");
+                                    myRef.setValue(emailUtente);   */
+
+                                    //modo per salvare i dati nel DB
+
+
+                                    Utente utente = new Utente(emailUtente);
+            myRef.child("Utenti").push().setValue(utente);
+
+//modo per salvere i dati su DB 3
+                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.i(TAG, "signInWithEmail:failure", task.getException());
@@ -226,8 +274,66 @@ public class LoginActivity extends AppCompatActivity {
 
                             }
                         });
+
+           /*     //modo semplice di salvare l'utente nel DB
+        myRef = database.getReference("utente");
+        myRef.setValue(emailUtente);
+
+        Log.d("utente", emailUtente); */
+
+
+
             }
-        }
+
+/*
+    public void leggiMessaggio() {
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+
+                tvMessaggio.setText(value);
+
+                Log.d(TAG, "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    } */
+
+    // questo metodo ci permette di ottenere il token dell'utente
+    public void getToken(){
+        // si cerca di ottenere l'istanza dell'oggetto Firebase che si sta utilizzando
+        //in questo modo ci facciamo restituire l'id relativo all'istanza di Firebase che si sta utilizzando
+        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                // controlliamo se abbiamo errori nell'esecuzione del task
+                if (task.isSuccessful()){
+                    // tra tutti id ati contenuti nel task chiediamo il token
+                    String token = task.getResult().getToken();
+                    Log.d("token", token);
+
+// per salvare il token dell'utente sul dispositivo
+                    //      myRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid().setValue(token));
+
+                } else {
+                    //segnaliamo che dà errore e ci facciamo restituire l'eccezione del task
+                    Log.d("error","errore", task.getException());
+                    return;
+                }
+            }
+        });
+    }
+
+}
 
 
 
