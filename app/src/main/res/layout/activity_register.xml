@@ -69,6 +69,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="true"
         android:onClick="registrati"
         android:text="Invia"
         app:layout_constraintBottom_toBottomOf="parent"
