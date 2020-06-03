@@ -97,9 +97,33 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-    private void saveUser(String emailUtente,String nome){
-        Utente user = new Utente(emailUtente);
-        myRef.child("Utenti").push().setValue(user);
+    String emailGlobal;
+    String nomeGlobal;
+    private void saveUserGettingToken(String emailUtente,String nome){
+        emailGlobal =emailUtente;
+        nomeGlobal=nome;
+        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                // controlliamo se abbiamo errori nell'esecuzione del task
+                if (task.isSuccessful()){
+                    // tra tutti id ati contenuti nel task chiediamo il token
+                    String token = task.getResult().getToken();
+                    Log.d("token", token);
+                    Utente user = new Utente(emailGlobal,nomeGlobal,token);
+                    myRef.child("Utenti").push().setValue(user);
+// per salvare il token dell'utente sul dispositivo
+                    //      myRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid().setValue(token));
+
+                } else {
+                    //segnaliamo che dà errore e ci facciamo restituire l'eccezione del task
+                    Log.d("error","errore", task.getException());
+                    return;
+                }
+
+            }
+        });
+
     }
 
     public void initUI(){
@@ -148,7 +172,8 @@ public class RegisterActivity extends AppCompatActivity {
         String encodedImage = Base64.encodeToString(imageInByte, Base64.NO_WRAP); */
 
 //modo per salvare i dati nel DB
-        saveUser(emailUtente,"nome loggato");     /*  Utente utente = new Utente(emailUtente);
+        saveUserGettingToken(emailUtente,nomeUtente);
+        /*  Utente utente = new Utente(emailUtente);
         myRef.child("Utenti").push().setValue(utente);  */
 
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -360,7 +385,6 @@ public class RegisterActivity extends AppCompatActivity {
                     String token = task.getResult().getToken();
                     Log.d("token", token);
 
-                    saveUser(token, token);
 // per salvare il token dell'utente sul dispositivo
                     //      myRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid().setValue(token));
 
